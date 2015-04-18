@@ -1,7 +1,6 @@
-set softtabstop=4
-set textwidth=79
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set expandtab
-set tabstop=8
-set list
-set listchars=tab:__,trail:.
+set tabstop=2
+set smarttab
+set smartindent
