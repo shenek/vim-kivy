@@ -16,6 +16,7 @@ syn match kivyPreProc            /#:.*/
 syn match kivyRule               /<\I\i*\(,\s*\I\i*\)*>:/
 syn match kivyAttribute          /\<\I\i*\>/ nextgroup=kivyValue
 syn match kivyClassAttribute     /\<[A-Z]\I\i*\>/
+syn match kivyIdAttribute        /\<id\>/ nextgroup=kivyValue
 
 syn include @pyth $VIMRUNTIME/syntax/python.vim
 syn region kivyValue start=":" end=/$/  contains=@pyth skipwhite
@@ -30,11 +31,12 @@ if version >= 508 || !exists("did_python_syn_inits")
     command -nargs=+ HiLink hi def link <args>
   endif
 
-    HiLink kivyPreproc           PreProc
+    HiLink kivyPreproc           Exception
     HiLink kivyComment           Comment
     HiLink kivyRule              Type
     HiLink kivyIdent             Statement
     HiLink kivyAttribute         Identifier
     HiLink kivyClassAttribute    Define
+    HiLink kivyIdAttribute       Structure
   delcommand HiLink
 endif
